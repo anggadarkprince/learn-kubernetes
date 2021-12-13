@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nginx-with-annotation
+  labels:
+    team: finance
+    version: 1.4.5
+    environment: production
+  annotations:
+    description: annotation-value
+    project-tags: payable, invoice, tax, finance
+spec:
+  containers:
+    - name: nginx
+      image: nginx
+      ports:
+        - containerPort: 80
